@@ -4,7 +4,7 @@ clicknumber=0
 def btnclick():
     global clicknumber
     clicknumber+=1
-    print(btn.text())
+    print(btn.clicked)
 app=QApplication()
 xPos=0
 yPos=0
