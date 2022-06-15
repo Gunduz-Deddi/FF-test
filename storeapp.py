@@ -11,5 +11,3 @@ class Store(Qwidget):
         self.resize(600,600).
     
 
-
-
