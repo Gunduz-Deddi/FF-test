@@ -88,7 +88,7 @@ class login(Qwidget):
     
     
     
-main=Main()
-main.show()
+store=Main()
+store.show()
 app.exec_()
 
