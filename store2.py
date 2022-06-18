@@ -5,6 +5,7 @@ cursor=connection.cursor()
 
 cursor.execute("create table industry (release_year integer, release_name text, year text)")
 
+# buraxilish il,ad,seher
 release_list= [
     (2004,"non-ferrous industry","Sydney"),
     (2005,"construction","Madrid"),
@@ -19,4 +20,7 @@ cursor.executemany("insert into industry values (?,?,?)", release_list )
 
 for row in cursor.execute("select * from industry"):
     print(row)
+    
 connection.close()
+
+
