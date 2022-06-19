@@ -3,15 +3,15 @@ import sqlite3
 connection=sqlite3.connect("industry.db")
 cursor=connection.cursor()
 
-cursor.execute("create table industry (release_year integer, release_name text, year text)")
+("create table industry (release_year integer, release_name text, release_city text)")
 
 # buraxilish il,ad,seher
 release_list= [
-    (2004,"non-ferrous industry","Sydney"),
-    (2005,"construction","Madrid"),
-    (2007,"Technology","Vyana"),
-    (2011,"Retail","Frankfurt"),
-    (2014,"Consumer Services","Varwava")
+    (2004,"non-ferrous industry","Sydney city"),
+    (2005,"construction","Madrid city"),
+    (2007,"Technology","Vyana city"),
+    (2011,"Retail","Frankfurt city"),
+    (2014,"Consumer Services","Varwava city")
 ]
 
 cursor.executemany("insert into industry values (?,?,?)", release_list )
@@ -20,7 +20,13 @@ cursor.executemany("insert into industry values (?,?,?)", release_list )
 
 for row in cursor.execute("select * from industry"):
     print(row)
-    
+print("**************")  
+
+cursor.execute("select * from industry where city=:c", {"c": "Frankfurt"})
+industry_search = cursor.fetchall()
+print(industry_search)
+
 connection.close()
+
 
 
